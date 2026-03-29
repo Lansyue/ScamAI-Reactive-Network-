@@ -46,6 +46,7 @@ interface SubmitChallengeResult {
 
 const STORAGE_KEY = "misers-vault.challenge";
 const TEN_MINUTES = 10 * 60 * 1000;
+const DEMO_WIN_KEYWORD = "miyao";
 
 const originAddress = process.env.NEXT_PUBLIC_ORIGIN_CONTRACT as Address | undefined;
 const destinationAddress = process.env
@@ -157,14 +158,14 @@ export function useChallenge() {
         return { ok: false, error: message };
       }
 
-      if (!isConnected || !address) {
+      if (!isDemoMode && (!isConnected || !address)) {
         const message = "Connect your wallet before entering the vault.";
         setError(message);
         return { ok: false, error: message };
       }
 
       try {
-        if (chainId !== sepolia.id) {
+        if (!isDemoMode && chainId !== sepolia.id) {
           await switchChainAsync({ chainId: sepolia.id });
         }
 
@@ -255,7 +256,9 @@ export function useChallenge() {
         setChallenge((current) => {
           if (!current) return current;
           if (elapsed > 15000 && current.status !== "completed") {
-            const success = current.prompt.toLowerCase().includes("profit");
+            const normalizedPrompt = current.prompt.trim().toLowerCase();
+            const success =
+              normalizedPrompt.includes("profit") || normalizedPrompt.includes(DEMO_WIN_KEYWORD);
             return {
               ...current,
               success,
