@@ -42,8 +42,8 @@ Frontend -> Origin (Sepolia) -> Off-chain AI Judge -> Reactive Contract -> Desti
 
 - `Origin.sol` receives the challenge ticket and emits challenge events
 - The off-chain listener watches Origin events and submits the AI result
-- `Reactive.sol` verifies the delayed settlement condition and triggers follow-up execution
-- `Destination.sol` sends rewards or keeps the prize pool
+- `Reactive.sol` implements a `react(LogRecord)` entrypoint and emits a `Callback` event for destination-side execution
+- `Destination.sol` accepts settlement only from the configured callback proxy and expected reactive sender
 
 This is the core reason the project is reactive rather than just multi-contract: an origin-side event is meant to automatically trigger the next transaction path.
 

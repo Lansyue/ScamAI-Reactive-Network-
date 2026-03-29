@@ -19,6 +19,7 @@ Fill this file with the exact deployed addresses used in the final demo and test
 ## Reactive Network
 
 - Reactive contract: `TBD`
+- Callback proxy: `TBD`
 - Watched event: `Origin.AIResultSubmitted`
 - Triggered callback target: `Destination.handleReactiveCallback`
 

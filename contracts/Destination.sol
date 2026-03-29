@@ -3,14 +3,16 @@ pragma solidity ^0.8.20;
 
 contract Destination {
     address public owner;
-    address public reactiveContract;
+    address public callbackProxy;
+    address public reactiveSender;
     uint256 public immutable rewardAmount;
 
     mapping(bytes32 => bool) public settled;
 
     event RewardClaimed(bytes32 indexed challengeId, address indexed player, uint256 amount);
     event PrizePoolIncreased(bytes32 indexed challengeId, uint256 currentBalance);
-    event ReactiveContractUpdated(address indexed reactiveContract);
+    event CallbackProxyUpdated(address indexed callbackProxy);
+    event ReactiveSenderUpdated(address indexed reactiveSender);
     event PrizePoolFunded(address indexed from, uint256 amount);
 
     modifier onlyOwner() {
@@ -18,20 +20,30 @@ contract Destination {
         _;
     }
 
-    modifier onlyReactive() {
-        require(msg.sender == reactiveContract, "Destination: not reactive");
+    modifier onlyCallbackProxy() {
+        require(msg.sender == callbackProxy, "Destination: not callback proxy");
         _;
     }
 
-    constructor(address initialReactiveContract, uint256 fixedRewardAmount) payable {
+    constructor(
+        address initialCallbackProxy,
+        address initialReactiveSender,
+        uint256 fixedRewardAmount
+    ) payable {
         owner = msg.sender;
-        reactiveContract = initialReactiveContract;
+        callbackProxy = initialCallbackProxy;
+        reactiveSender = initialReactiveSender;
         rewardAmount = fixedRewardAmount;
     }
 
-    function setReactiveContract(address nextReactiveContract) external onlyOwner {
-        reactiveContract = nextReactiveContract;
-        emit ReactiveContractUpdated(nextReactiveContract);
+    function setCallbackProxy(address nextCallbackProxy) external onlyOwner {
+        callbackProxy = nextCallbackProxy;
+        emit CallbackProxyUpdated(nextCallbackProxy);
+    }
+
+    function setReactiveSender(address nextReactiveSender) external onlyOwner {
+        reactiveSender = nextReactiveSender;
+        emit ReactiveSenderUpdated(nextReactiveSender);
     }
 
     function fundPrizePool() external payable {
@@ -39,10 +51,12 @@ contract Destination {
     }
 
     function handleReactiveCallback(
+        address reactiveContract,
         bytes32 challengeId,
         address player,
         bool success
-    ) external onlyReactive {
+    ) external onlyCallbackProxy {
+        require(reactiveContract == reactiveSender, "Destination: invalid reactive sender");
         require(!settled[challengeId], "Destination: already settled");
         settled[challengeId] = true;
 
