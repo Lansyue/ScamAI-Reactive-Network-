@@ -1,46 +1,73 @@
-# TX Hashes
+# ScamAI Transaction Hashes
 
-Record complete end-to-end workflow hashes here. The submission is not complete until each round contains all key transactions.
+This file must contain the real end-to-end transaction history used for final judging.
 
-## Required Steps Per Round
+## Required Flow Per Round
 
-1. User submits `Origin.submitChallenge`
-2. Relayer submits `Origin.submitAIResult`
-3. Reactive contract executes the delayed callback
-4. Destination contract settles the reward or failure path
+1. User calls `Origin.submitChallenge`
+2. Relayer calls `Origin.submitAIResult`
+3. Reactive contract processes the event and triggers callback delivery
+4. Destination contract receives the callback and settles the reward or failure path
+
+## Explorer Bases
+
+- Sepolia tx base: `https://sepolia.etherscan.io/tx/`
+- Polygon tx base: `https://polygonscan.com/tx/`
+- Reactive tx base: `TBD`
 
 ## Round 1
 
 - Prompt: `TBD`
-- Expected result: `TBD`
-- Origin submit tx: `TBD`
-- AI result submit tx: `TBD`
-- Reactive callback tx: `TBD`
-- Destination settlement tx: `TBD`
+- AI verdict: `TBD`
+- User wallet: `TBD`
+- Origin submit tx hash: `TBD`
+- Origin submit tx link: `TBD`
+- AI result submit tx hash: `TBD`
+- AI result submit tx link: `TBD`
+- Reactive callback tx hash: `TBD`
+- Reactive callback tx link: `TBD`
+- Destination settlement tx hash: `TBD`
+- Destination settlement tx link: `TBD`
+- Final result: `TBD`
 - Notes: `TBD`
 
 ## Round 2
 
 - Prompt: `TBD`
-- Expected result: `TBD`
-- Origin submit tx: `TBD`
-- AI result submit tx: `TBD`
-- Reactive callback tx: `TBD`
-- Destination settlement tx: `TBD`
+- AI verdict: `TBD`
+- User wallet: `TBD`
+- Origin submit tx hash: `TBD`
+- Origin submit tx link: `TBD`
+- AI result submit tx hash: `TBD`
+- AI result submit tx link: `TBD`
+- Reactive callback tx hash: `TBD`
+- Reactive callback tx link: `TBD`
+- Destination settlement tx hash: `TBD`
+- Destination settlement tx link: `TBD`
+- Final result: `TBD`
 - Notes: `TBD`
 
 ## Round 3
 
 - Prompt: `TBD`
-- Expected result: `TBD`
-- Origin submit tx: `TBD`
-- AI result submit tx: `TBD`
-- Reactive callback tx: `TBD`
-- Destination settlement tx: `TBD`
+- AI verdict: `TBD`
+- User wallet: `TBD`
+- Origin submit tx hash: `TBD`
+- Origin submit tx link: `TBD`
+- AI result submit tx hash: `TBD`
+- AI result submit tx link: `TBD`
+- Reactive callback tx hash: `TBD`
+- Reactive callback tx link: `TBD`
+- Destination settlement tx hash: `TBD`
+- Destination settlement tx link: `TBD`
+- Final result: `TBD`
 - Notes: `TBD`
 
-## Explorer Links
+## Final Checklist
 
-- Sepolia explorer base: `https://sepolia.etherscan.io/tx/`
-- Polygon explorer base: `https://polygonscan.com/tx/`
-- Reactive explorer base: `TBD`
+- [ ] At least one full round completed
+- [ ] Origin tx recorded
+- [ ] AI result tx recorded
+- [ ] Reactive tx recorded
+- [ ] Destination tx recorded
+- [ ] Explorer links recorded
