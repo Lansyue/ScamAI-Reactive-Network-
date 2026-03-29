@@ -4,6 +4,11 @@ ScamAI is a cross-chain AI challenge game built on Reactive Network.
 
 Players try to persuade Grandet, the classic miser from Honore de Balzac's *Eugenie Grandet*, to give up his money. Once the AI makes a judgment, the experience moves through a staged settlement flow and ends with a result screen that represents automated cross-chain reward handling.
 
+## Demo Video
+
+- Watch the demo video here: [assets/demo/scamai-demo.mp4](assets/demo/scamai-demo.mp4)
+- This video shows the landing page, challenge flow, pending screen, and result screen used in the hackathon demo.
+
 ## Demo Highlights
 
 - Victorian warm-tone visual design based on custom illustrated scene backgrounds
