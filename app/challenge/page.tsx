@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { AppShell } from "@/components/layout/app-shell";
+import { ConnectWalletButton } from "@/components/vault/connect-wallet-button";
 import { FrameCard } from "@/components/vault/frame-card";
 import { OrnateButton } from "@/components/vault/ornate-button";
 import { useChallenge } from "@/hooks/useChallenge";
@@ -68,6 +69,20 @@ export default function ChallengePage() {
                 </div>
               </div>
 
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-4 rounded-[22px] border border-[#d7b26e]/45 bg-[rgba(255,249,239,0.52)] px-4 py-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.24em] text-[#8b6c42]">
+                    Wallet Access
+                  </p>
+                  <p className="mt-1 text-sm text-[#6b4b28] md:text-base">
+                    {isDemoMode
+                      ? "Demo mode runs without a wallet, but you can still connect MetaMask for the live presentation."
+                      : "Connect your wallet on Sepolia to submit the live challenge ticket."}
+                  </p>
+                </div>
+                <ConnectWalletButton />
+              </div>
+
               <div className="mt-6">
                 <label
                   htmlFor="challenge-prompt"
@@ -106,7 +121,13 @@ export default function ChallengePage() {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="font-display text-2xl text-[#5f3813]">Status</p>
                     <p className="text-sm text-[#7b5d39]">
-                      {isDemoMode ? "Demo mode active" : "Live mode ready"}
+                      {isDemoMode
+                        ? isConnected
+                          ? "Demo mode with wallet connected"
+                          : "Demo mode active"
+                        : isConnected
+                          ? "Live mode ready"
+                          : "Waiting for wallet"}
                     </p>
                   </div>
                   <p className="mt-3 text-lg leading-relaxed text-[#5b3e1e]">
