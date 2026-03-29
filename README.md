@@ -12,6 +12,19 @@ Players try to persuade Grandet, the classic miser from Honore de Balzac's *Euge
 - Success/failure branching result pages for judge-facing presentation
 - Wallet-ready frontend structure built with Next.js 14, wagmi, and viem
 
+## Reactive Architecture
+
+```text
+Frontend -> Origin (Sepolia) -> Off-chain AI Judge -> Reactive Contract -> Destination (Polygon)
+```
+
+- `Origin.sol` receives the challenge ticket and emits challenge events
+- The off-chain listener watches Origin events and submits the AI result
+- `Reactive.sol` verifies the delayed settlement condition and triggers follow-up execution
+- `Destination.sol` sends rewards or keeps the prize pool
+
+This is the core reason the project is reactive rather than just multi-contract: an origin-side event is meant to automatically trigger the next transaction path.
+
 ## Screens
 
 - `/` Landing page with entry CTA
@@ -34,6 +47,31 @@ This repository currently supports a presentation-friendly demo flow even withou
 - Tailwind CSS
 - wagmi
 - viem
+- Solidity
+- Hardhat-style deployment scripts
+
+## Repository Layout
+
+```text
+contracts/
+  Origin.sol
+  Reactive.sol
+  Destination.sol
+  interfaces/
+scripts/
+  deploy-origin.js
+  deploy-reactive.js
+  deploy-destination.js
+  test-workflow.js
+docs/
+  WORKFLOW.md
+  TX_HASHES.md
+  ADDRESSES.md
+app/
+components/
+hooks/
+public/
+```
 
 ## Local Development
 
@@ -65,3 +103,14 @@ The core AI character is Grandet from Balzac's *Eugenie Grandet*. His greed, sus
 
 Reactive Network is used as the conceptual bridge between AI judgment and the next on-chain action, allowing the project to present an automated pipeline from challenge submission to settlement.
 
+## Submission Notes
+
+The repository now contains:
+
+- Origin, Reactive, and Destination contract source files
+- Deployment script templates
+- Workflow documentation
+- Contract address template
+- Transaction hash template
+
+Before final official submission, replace the `TBD` entries in [docs/ADDRESSES.md](docs/ADDRESSES.md) and [docs/TX_HASHES.md](docs/TX_HASHES.md) with real deployed data from your team run.
