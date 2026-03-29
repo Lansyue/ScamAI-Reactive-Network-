@@ -1,6 +1,8 @@
 .next
 node_modules
 out
+artifacts
+cache
 .env.local
 .playwright-cli
 output

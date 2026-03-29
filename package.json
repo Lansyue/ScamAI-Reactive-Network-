@@ -6,7 +6,11 @@
     "dev": "node node_modules/next/dist/bin/next dev",
     "build": "node node_modules/next/dist/bin/next build",
     "start": "node node_modules/next/dist/bin/next start",
-    "lint": "node node_modules/next/dist/bin/next lint"
+    "lint": "node node_modules/next/dist/bin/next lint",
+    "contracts:compile": "hardhat compile",
+    "deploy:origin": "hardhat run scripts/deploy-origin.js --network sepolia",
+    "deploy:reactive": "hardhat run scripts/deploy-reactive.js --network sepolia",
+    "deploy:destination": "hardhat run scripts/deploy-destination.js --network polygon"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.59.20",
@@ -20,12 +24,15 @@
     "wagmi": "^2.15.1"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.7",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.25",
+    "hardhat": "^2.22.18",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"

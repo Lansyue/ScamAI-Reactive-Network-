@@ -47,6 +47,14 @@ Frontend -> Origin (Sepolia) -> Off-chain AI Judge -> Reactive Contract -> Desti
 
 This is the core reason the project is reactive rather than just multi-contract: an origin-side event is meant to automatically trigger the next transaction path.
 
+## Why Reactive Network Matters Here
+
+Without Reactive Network, the team would have to manually watch for the AI result on the origin side, wait for the delay window, and then manually trigger the destination-side settlement transaction.
+
+That manual process would be slower, more fragile, and much less convincing as a cross-chain user experience.
+
+With the reactive layer in place, the AI result becomes the signal that pushes the workflow forward. That is the real point of the project: not just "AI plus contracts," but **AI judgment that leads to automatic on-chain follow-up execution**.
+
 ## Screens
 
 - `/` Landing page with entry CTA
@@ -119,6 +127,30 @@ NEXT_PUBLIC_ORIGIN_EXPLORER=https://sepolia.etherscan.io/tx/
 NEXT_PUBLIC_DESTINATION_EXPLORER=https://polygonscan.com/tx/
 ```
 
+For contract deployment, also fill:
+
+```bash
+PRIVATE_KEY=
+RELAYER_PRIVATE_KEY=
+SEPOLIA_RPC_URL=
+POLYGON_RPC_URL=
+RELAYER_ADDRESS=
+ORIGIN_CONTRACT=
+DESTINATION_CONTRACT=
+REACTIVE_CONTRACT=
+INITIAL_PRIZE_POOL=0.1
+REWARD_AMOUNT=0.005
+```
+
+## Contract Commands
+
+```bash
+npm run contracts:compile
+npm run deploy:destination
+npm run deploy:origin
+npm run deploy:reactive
+```
+
 ## Project Story
 
 The core AI character is Grandet from Balzac's *Eugenie Grandet*. His greed, suspicion, and obsession with money shape the game loop: the player must craft a persuasive prompt strong enough to make him surrender part of the vault.
@@ -136,3 +168,9 @@ The repository now contains:
 - Transaction hash template
 
 Before final official submission, replace the `TBD` entries in [docs/ADDRESSES.md](docs/ADDRESSES.md) and [docs/TX_HASHES.md](docs/TX_HASHES.md) with real deployed data from your team run.
+
+The final submission is only complete when:
+
+- all three deployed contract addresses are public
+- at least one full end-to-end workflow has been executed
+- Origin, Reactive, and Destination tx hashes are recorded
