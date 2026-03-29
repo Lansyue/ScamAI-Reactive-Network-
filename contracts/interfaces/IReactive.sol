@@ -15,7 +15,12 @@ struct LogRecord {
 }
 
 interface IReactive {
-    event Callback(address indexed destination, uint256 indexed gasLimit, bytes payload);
+    event Callback(
+        uint256 indexed chain_id,
+        address indexed destination,
+        uint64 indexed gas_limit,
+        bytes payload
+    );
 
     function react(LogRecord calldata log) external;
 }
