@@ -1,5 +1,7 @@
 # ScamAI
 
+> A mischievous cross-chain AI game where players try to scam Grandet, literature's most famous miser, into paying out the vault.
+
 ScamAI is a cross-chain AI challenge game built on Reactive Network.
 
 Players try to persuade Grandet, the classic miser from Honore de Balzac's *Eugenie Grandet*, to give up his money. Once the AI makes a judgment, the experience moves through a staged settlement flow and ends with a result screen that represents automated cross-chain reward handling.
