@@ -33,6 +33,14 @@ export function AppShell({
       )}
     >
       <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:120px_120px]" />
+      <div className="pointer-events-none absolute left-4 top-4 z-20 sm:left-6 sm:top-6">
+        <div className="rounded-[18px] border border-[#f3ddaa]/20 bg-[rgba(17,10,7,0.42)] px-4 py-2.5 text-[#fff1c3] shadow-[0_14px_30px_rgba(15,8,5,0.18)] backdrop-blur-[6px]">
+          <p className="font-display text-lg uppercase tracking-[0.18em] sm:text-xl">ScamAI</p>
+          <p className="text-[10px] uppercase tracking-[0.22em] text-[#f3ddaa]/80 sm:text-xs">
+            The Miser&apos;s Vault
+          </p>
+        </div>
+      </div>
       <div className="relative z-10 min-h-screen">{children}</div>
     </main>
   );

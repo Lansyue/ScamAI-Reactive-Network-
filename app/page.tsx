@@ -15,7 +15,7 @@ export default function LandingPage() {
       <div className="mx-auto flex min-h-screen w-full items-center px-4 py-6 lg:px-8">
         <SceneStage
           src="/references/landing-reference.png"
-          alt="The Miser's Vault landing poster"
+          alt="ScamAI landing poster for The Miser's Vault"
           priority
         >
           <div className="absolute right-[2.8%] top-[4.2%] hidden lg:block">
