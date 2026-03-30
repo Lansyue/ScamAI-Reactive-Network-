@@ -11,6 +11,7 @@ async function main() {
   await origin.waitForDeployment();
 
   console.log("Origin deployed:", await origin.getAddress());
+  console.log("Origin deployment tx:", origin.deploymentTransaction()?.hash);
 }
 
 main().catch((error) => {

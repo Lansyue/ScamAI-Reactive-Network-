@@ -15,6 +15,7 @@ async function main() {
   await reactive.waitForDeployment();
 
   console.log("Reactive deployed:", await reactive.getAddress());
+  console.log("Reactive deployment tx:", reactive.deploymentTransaction()?.hash);
 }
 
 main().catch((error) => {

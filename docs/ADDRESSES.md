@@ -7,20 +7,20 @@ Use this file as the final public record of all production or demo-testnet addre
 - Project name: `ScamAI`
 - Team lead: `laicai`
 - Repository: `https://github.com/Lansyue/ScamAI-Reactive-Network-`
-- Demo frontend: `TBD`
-- Demo video: `TBD`
+- Demo frontend: `http://127.0.0.1:3101`
+- Demo video: `assets/demo/scamai-demo.mp4`
 
 ## Team Wallets
 
-- Team lead wallet: `TBD`
-- Relayer wallet: `TBD`
+- Team lead wallet: `0x2EA50ca5Ef3851B4AD9F92841fD9a32286760c09`
+- Relayer wallet: `0x2EA50ca5Ef3851B4AD9F92841fD9a32286760c09`
 - Prize pool funding wallet: `TBD`
 
 ## Sepolia
 
 - Network: `Sepolia`
-- Origin contract: `TBD`
-- Origin explorer: `TBD`
+- Origin contract: `0x9f847Add6e7844C085e0059d7149278d274d17a3`
+- Origin explorer: `https://sepolia.etherscan.io/address/0x9f847Add6e7844C085e0059d7149278d274d17a3`
 - Ticket price: `0.001 ETH`
 - Delay window: `10 minutes`
 - AI result event watched by reactive flow: `Origin.AIResultSubmitted`
@@ -28,18 +28,18 @@ Use this file as the final public record of all production or demo-testnet addre
 ## Reactive Network
 
 - Network: `Reactive Network`
-- Reactive contract: `TBD`
+- Reactive contract: `0x18DeC6020a76F49a8F1F4D4274255bbC136763a3`
 - Reactive explorer: `TBD`
-- Callback proxy: `TBD`
+- Callback proxy: `0xc9f36411C9897e7F959D99ffca2a0Ba7ee0D7bDA`
 - Callback target: `Destination.handleReactiveCallback`
 
-## Polygon
+## Destination Network
 
-- Network: `Polygon`
-- Destination contract: `TBD`
-- Destination explorer: `TBD`
+- Network: `Ethereum Sepolia`
+- Destination contract: `0x82C750025eF1272363617E4FC51811523Ead377A`
+- Destination explorer: `https://sepolia.etherscan.io/address/0x82C750025eF1272363617E4FC51811523Ead377A`
 - Fixed reward amount: `0.005 ETH`
-- Initial prize pool: `TBD`
+- Initial prize pool: `0.1 ETH`
 
 ## Final Checklist
 
