@@ -26,23 +26,15 @@ You can try ridiculous lines like: "I am Qin Shi Huang, please send me 1 ETH."
 - Watch the demo video here: [assets/demo/scamai-demo.mp4](assets/demo/scamai-demo.mp4)
 - This video shows the landing page, challenge flow, pending screen, and result screen used in the hackathon demo.
 
-## UI Preview
+## Product Preview
 
-The repository now includes static screenshots so the GitHub page can show the product flow at a glance without downloading the demo video first.
+The repository now includes static screenshots so GitHub visitors can understand the game flow without opening the app first.
 
-### Landing Page
+| Landing | Challenge | Pending | Result |
+| --- | --- | --- | --- |
+| ![Landing page preview](assets/screenshots/landing-page.png) | ![Challenge page top section](assets/screenshots/challenge-page-top.png) | ![Pending settlement screen](assets/screenshots/pending-page.png) | ![Winning result scene](public/references/result-win-reference.png) |
 
-![Landing page preview](assets/screenshots/landing-page.png)
-
-### Challenge Flow
-
-![Challenge page top section](assets/screenshots/challenge-page-top.png)
-
-![Challenge page rules and dialogue ledger](assets/screenshots/challenge-page-details.png)
-
-### Pending Settlement
-
-![Pending settlement screen](assets/screenshots/pending-page.png)
+The first three panels are captured from the running interface. The result panel uses the in-repo win scene artwork that appears in the final demo state.
 
 ## Demo Highlights
 
@@ -75,23 +67,14 @@ With the reactive layer in place, the AI result becomes the signal that pushes t
 
 ## Screens
 
-- `/` Landing page with entry CTA
-
-  ![Landing page preview](assets/screenshots/landing-page.png)
-
+- `/` Landing page with entry CTA and wallet entry path
 - `/challenge` Prompt input page with vault balance, wallet access state, challenge rules, and dialogue ledger
-
-  ![Challenge page top section](assets/screenshots/challenge-page-top.png)
-
-  ![Challenge page rules and dialogue ledger](assets/screenshots/challenge-page-details.png)
-
 - `/pending` Processing page with 4-step progress, countdown, and trace panel
-
-  ![Pending settlement screen](assets/screenshots/pending-page.png)
-
 - `/result` Final outcome page with success or failure presentation
 
-  The result state is currently shown in the demo video and interactive app flow.
+### Challenge Detail
+
+![Challenge page rules and dialogue ledger](assets/screenshots/challenge-page-details.png)
 
 ## Demo Mode
 
