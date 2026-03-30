@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "./interfaces/IDestination.sol";
-import "./interfaces/IOrigin.sol";
 import "./interfaces/IReactive.sol";
 
 contract Reactive is IReactive {
@@ -77,11 +75,8 @@ contract Reactive is IReactive {
         address player = address(uint160(uint256(log.topic2)));
         (bool success, , ) = abi.decode(log.data, (bool, bytes32, string));
 
-        require(IOrigin(origin).canSettle(challengeId), "Reactive: delay not met");
-        require(IOrigin(origin).getChallengePlayer(challengeId) == player, "Reactive: player mismatch");
-
         bytes memory payload = abi.encodeWithSelector(
-            IDestination.handleReactiveCallback.selector,
+            bytes4(keccak256("handleReactiveCallback(address,bytes32,address,bool)")),
             address(this),
             challengeId,
             player,

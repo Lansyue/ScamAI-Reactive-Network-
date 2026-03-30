@@ -14,7 +14,7 @@ Use this file as the final public record of all production or demo-testnet addre
 
 - Team lead wallet: `0x2EA50ca5Ef3851B4AD9F92841fD9a32286760c09`
 - Relayer wallet: `0x2EA50ca5Ef3851B4AD9F92841fD9a32286760c09`
-- Prize pool funding wallet: `TBD`
+- Prize pool funding wallet: `0x2EA50ca5Ef3851B4AD9F92841fD9a32286760c09`
 
 ## Sepolia
 
@@ -28,9 +28,9 @@ Use this file as the final public record of all production or demo-testnet addre
 ## Reactive Network
 
 - Network: `Reactive Network`
-- Reactive contract: `0x18DeC6020a76F49a8F1F4D4274255bbC136763a3`
-- Reactive explorer: `TBD`
-- Callback proxy: `0xc9f36411C9897e7F959D99ffca2a0Ba7ee0D7bDA`
+- Reactive contract: `0x65FF61BCdbB713ba15eBd2B98967f228BCFd780d`
+- Reactive explorer: `https://lasna.reactscan.net/address/0x65FF61BCdbB713ba15eBd2B98967f228BCFd780d`
+- Callback proxy: `0x2EA50ca5Ef3851B4AD9F92841fD9a32286760c09`
 - Callback target: `Destination.handleReactiveCallback`
 
 ## Destination Network
@@ -43,10 +43,10 @@ Use this file as the final public record of all production or demo-testnet addre
 
 ## Final Checklist
 
-- [ ] Origin address filled
-- [ ] Reactive address filled
-- [ ] Destination address filled
-- [ ] Explorer links filled
-- [ ] Wallet addresses filled
-- [ ] Demo frontend link filled
-- [ ] Demo video link filled
+- [x] Origin address filled
+- [x] Reactive address filled
+- [x] Destination address filled
+- [x] Explorer links filled
+- [x] Wallet addresses filled
+- [x] Demo frontend link filled
+- [x] Demo video link filled
